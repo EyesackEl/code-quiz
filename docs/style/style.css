@@ -1,0 +1,55 @@
+body {
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: green;
+}
+
+
+header {
+    background-color: purple;
+    margin: 5 0 0 0;
+}
+
+#highscore-box {
+    border: dotted 2px red;
+    width: fit-content;
+}
+
+#highscore-box:hover {
+    color: white;
+}
+
+#timer {
+    position: absolute;
+    right: 5px;
+    border: dotted 2px red;
+}
+
+#question-box {
+    margin: 5px auto;
+    border: dotted 2px red;
+    text-align: center;
+}
+
+.answers-0, .answers-1, .answers-2, .answers-3 {
+    margin: 5px auto;
+    border: dotted 2px red;
+    text-align:center;
+    width: 350px;
+}
+
+.answers-1:hover, .answers-2:hover, .answers-3:hover {
+    color: white;
+}
+
+#start-button {
+    border: dotted 2px red;
+    text-align: center;
+    width: 125px;
+    height: 25px;
+    line-height: 25px;
+    margin: auto;
+}
+
+#start-button:hover {
+    color: white;
+}
