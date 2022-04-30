@@ -42,7 +42,7 @@ function startTimer() {
         timerElement.textContent = timerCount;
         if (timerCount <= 0 && answerDone[2]) {
             clearInterval(timer);
-        } else if (timerCount <= 0) {
+        } else if (timerCount <= 0 && !answerDone[2]) {
             clearInterval(timer);
             quizFinished();
         }
@@ -182,7 +182,6 @@ function displayHighscore() {
     if (localStorage.getItem("initials") !== "" && localStorage.getItem("highscore") !== "" ) {
         highscoreBox.children[0].children[0].textContent = localStorage.getItem("initials") + " --- score: " + localStorage.getItem("highscore");
     }
-    
 }
 
 // CONDENSING ATTEMPT
