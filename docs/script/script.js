@@ -7,22 +7,23 @@ var answerText = document.querySelectorAll(".answer-text");
 var startBtn = document.getElementById("start-button");
 var clearHighscoreBtn = document.getElementById("clear-button");
 
-var timerCount = 3;
+var timerCount = 60;
 var score = 0;
 
 var answerDone = [false, false, false, false, false]
 
 
-var questions = ["Who is the most handsome boy in the world?", "this is a test question 2", "this is a test question 3"]
+var questions = ["What does 'DOM' stand for in regards to HTML?", "How do you make a rounded border in css?", "What is the 'i' in a 'for' loop called?"]
 var answers = [
-["Isaac", "The guy who made this quiz", "Mr. LaFlamme", "All of the above"],
-["example2", "Pick Me", "example2", "example2"],
-["example3", "example3", "Pick Me", "example3"]
+["Dot Object Matrix", "Dark Orange Mouse", "Dissolution Of Marriage", "Document Object Model"],
+["border-corner:", "border-radius:", "round-border:", "radius-value:"],
+["Integer", "Variable", "Iterator", "Identity"]
 ];
 
 //starts timer, displays first question and answers,
 //and hides start button when pressed
 startBtn.addEventListener("click", function() {
+    //defining the local variable for the answer boxes and changing their 
     var answerBoxes = document.querySelectorAll(".filler")
     answerBoxes.forEach(element => {
         element.removeAttribute("class", "filler");
@@ -39,7 +40,9 @@ function startTimer() {
     timer = setInterval(function() {
         timerCount--;
         timerElement.textContent = timerCount;
-        if (timerCount <= 0) {
+        if (timerCount <= 0 && answerDone[2]) {
+            clearInterval(timer);
+        } else if (timerCount <= 0) {
             clearInterval(timer);
             quizFinished();
         }
